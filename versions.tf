@@ -1,11 +1,11 @@
 terraform {
   required_version = ">= 1.0.0"
-  backend "s3" {
-    encrypt        = true
-    bucket         = "docplan"
-    key            = "test/eu-north-1.tfstate"
+  backend "local" {
+/*    encrypt        = true
+    bucket         = "example"*/
+/*    key            = "test/eu-north-1.tfstate"
     region         = "eu-north-1"
-    dynamodb_table = "terraform-state-lock-dynamo"
+    dynamodb_table = "terraform-state-lock-dynamo"*/
   }
   required_providers {
     aws = {

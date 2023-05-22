@@ -11,8 +11,8 @@ image:
 
 imagePullSecrets:
  - name: ghcr-login-secret
-nameOverride: "go"
-fullnameOverride: "go"
+nameOverride: "java"
+fullnameOverride: "java"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -21,7 +21,7 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: "go"
+  name: "java"
 
 podAnnotations: {}
 
@@ -71,7 +71,7 @@ resources:
 autoscaling:
   enabled: true
   minReplicas: 1
-  maxReplicas: 100
+  maxReplicas: 10
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 

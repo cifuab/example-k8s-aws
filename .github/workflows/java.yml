@@ -1,4 +1,4 @@
-name: PHP docker application
+name: Java docker application
 on:
   push:
     branches: [ "master" ]

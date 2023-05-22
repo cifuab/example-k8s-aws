@@ -4,8 +4,7 @@ on:
     branches: [ "main" ]
     paths:
       - terraform/**
-
- jobs:
+jobs:
    terraform_apply:
      runs-on: ubuntu-latest
      defaults:

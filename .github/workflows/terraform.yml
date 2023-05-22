@@ -1,0 +1,40 @@
+name: Terraform Plan - Apply
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - terraform/**
+
+ jobs:
+   terraform_apply:
+     runs-on: ubuntu-latest
+     defaults:
+       run:
+         working-directory: terraform
+     steps:
+       - uses: actions/checkout@v3
+       - uses: hashicorp/setup-terraform@v2
+         with:
+           terraform_version: 1.2.7
+       - name: Verify Terraform version
+         run: terraform --version
+       - name: Terraform init
+         env:
+           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         run: terraform init -upgrade -input=false
+       - name: Terraform validation
+         env:
+           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         run: terraform validate
+       - name: Terraform Plan
+         env:
+           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         run: terraform plan
+#       # - name: Terraform apply
+#       #   env:
+#       #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#       #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#       #   run: terraform apply -auto-approve -input=false

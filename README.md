@@ -17,10 +17,10 @@ Mostly managed by github actions workflows and input variables.
 
 Also Terraform has a built-in “workspace”.
 
-Use distintc workflow for each regions and environments,
+Use distinct workflow for each regions and environments,
 With Command-line key/value pairs stored in github secrets.
 
-All remote backends are separeted by region/env tfstate
+All remote backends are separated by region/env tfstate
 
 - Example 1: prod | eu-north-1
 
@@ -82,6 +82,9 @@ DIRECTORY
 # EKS Cluster Deployment with new VPC
 
 This example deploys the following Basic EKS Cluster with VPC
+
+![](img.png)
+
 
 - Creates a new sample VPC, 3 Private Subnets and 3 Public Subnets
 - Creates Internet gateway for Public Subnets and NAT Gateway for Private Subnets

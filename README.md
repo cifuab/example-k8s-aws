@@ -186,12 +186,10 @@ terraform destroy -auto-approve
 
 - Config S3 and dynamo DB form tfstate
 - Modify CI/CD for Apps
-  - Add parameters to dockerfile
-  - Add values.yaml for different env
-  - Fix ingress creation apiVersion: extensions/v1beta1 is deprecated, and add nginx regex params
 
-- RDS
-    - Add Lambda API for new users with temp token.
+  - Add values.yaml for different env
+
+
 
 ----
 

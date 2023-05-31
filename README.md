@@ -4,14 +4,14 @@ Try to cover some aspects of this points :
 
 - Setup EKS on AWS,egress traffic from the cluster is using just one IP address with Nat Gateway
 - Auto-Scaler , Nginx autoconfig
-- Dockerize & Deploy Java apps, deploy in EKS with helm + HPA
+- Dockerize & Deploy Python apps, deploy in EKS with helm + HPA
 - Setup RDS Postgresql
 
-# Apps config
+## Apps config
 
 Check readme inside the apps directory
 
-# Structure Directory and multiple regions/environments strategy
+## Structure Directory and multiple regions/environments strategy
 
 Mostly managed by github actions workflows and input variables.
 
@@ -184,15 +184,11 @@ terraform destroy -auto-approve
 - Deploy from github actions IaC
   - Apply multiple regions/environments strategy
 
-- Config S3 and dynamo DB form tfstate
+- Config S3 and dynamo DB for block tfstate
 - Modify CI/CD for Apps
-
   - Add values.yaml for different env
 
-
-
 ----
-
 # Improvements
 
 - EKS

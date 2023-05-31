@@ -1,11 +1,13 @@
 # REQS
 
-Try to cover some aspects of this points :
+Try to cover some aspects of these points :
 
 - Setup EKS on AWS,egress traffic from the cluster is using just one IP address with Nat Gateway
 - Auto-Scaler , Nginx autoconfig
 - Dockerize & Deploy Python apps, deploy in EKS with helm + HPA
 - Setup RDS Postgresql
+
+**Note**: The easiest way is to use AWS Lamda or some serverless service for API
 
 ## Apps config
 
